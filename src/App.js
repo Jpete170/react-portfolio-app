@@ -1,57 +1,37 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import './App.css';
+//import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import Navigation from './components/NavigationBar';
+
+import {Home} from './screens/home';
+import {ToDo} from './screens/ToDo'
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  const [date, setDate] = useState(null);
-  useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.text();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
-  return (
-    <main>
-      <h1>Create React App + Go API</h1>
-      <h2>
-        Deployed with{' '}
-        <a
-          href="https://vercel.com/docs"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Vercel
-        </a>
-        !
-      </h2>
-      <p>
-        <a
-          href="https://github.com/vercel/vercel/tree/main/examples/create-react-app"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          This project
-        </a>{' '}
-        was bootstrapped with{' '}
-        <a href="https://facebook.github.io/create-react-app/">
-          Create React App
-        </a>{' '}
-        and contains three directories, <code>/public</code> for static assets,{' '}
-        <code>/src</code> for components and content, and <code>/api</code>{' '}
-        which contains a serverless <a href="https://golang.org/">Go</a>{' '}
-        function. See{' '}
-        <a href="/api/date">
-          <code>api/date</code> for the Date API with Go
-        </a>
-        .
-      </p>
-      <br />
-      <h2>The date according to Go is:</h2>
-      <p>{date ? date : 'Loading date...'}</p>
-    </main>
-  );
+  return(
+    <div class="">
+    <header>
+      <Header />
+    </header>
+      <main>
+        <Router>
+          <div>
+          <Navigation/>
+          <Routes>
+            <Route path='/' element={<Home />}/>
+            <Route path='/test' element={<ToDo />} />
+          </Routes>
+          </div>
+        </Router> 
+      </main>
+    
+    </div>
+  
+  )
 }
 
 export default App;

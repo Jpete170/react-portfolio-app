@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Navigation from './components/NavigationBar';
 
 import {Home} from './screens/home';
-import {ToDo} from './screens/ToDo'
+import {ToDo_Complete} from './screens/ToDo'
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -23,7 +23,7 @@ function App() {
           <Navigation/>
           <Routes>
             <Route path='/' element={<Home />}/>
-            <Route path='/test' element={<ToDo />} />
+            <Route path='/todo' element={<ToDo_Complete />} />
           </Routes>
           </div>
         </Router> 

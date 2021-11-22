@@ -10,12 +10,12 @@ export const Home = () =>{
         </p>
       </div>
 
-      <div class="container">
+      <div class="container gap-3">
         <div class="row justify-content-center">
           <div class="col-1">
             <a class="btn btn-primary" href="https://jacksonpeters.dev/projects" target="blank">Portfolio Site</a>
           </div>
-          <div class="col-2">
+          <div class="col-2 px-5">
             <a class="btn btn-primary" href="https://github.com/Jpete170/react-portfolio-app" target="blank">GitHub Repository</a>
           </div>
         </div>

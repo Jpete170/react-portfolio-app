@@ -24,6 +24,7 @@ export const Home = () =>{
       <div class="container">
         <p>Each project will have it's own tab on this site, which can be seen under the title.</p>
         <p>The decision to host JavaScript projects in one project was to prevent the GitHub Repository from becoming cluttered, and easier to host & show on Vercel.</p>
+        <p>This project was designed and styled using <a href="https://getbootstrap.com/" target="_blank">BootStrap</a>; which provides a quick way to get this project up and running, in terms in UI/UX.</p>
       </div>
     </body>
   );
